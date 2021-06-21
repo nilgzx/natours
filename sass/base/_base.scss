@@ -1,0 +1,47 @@
+/* Universal Selector */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* so, 1rem = 10px, replace every px to rem */
+    /* also, defalult is 16px, so to get 10px, we convert it to its percentage */
+    font-size: 62.5%; 
+
+
+    //ORDER of media queries MUST BE MAINTAINED!!
+
+    @include respond(tab-land){ //width < 1200px?
+        font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(tab-port){ //width < 900px?
+        font-size: 50%; //1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(phone){
+        font-size: 37.5%; //1rem = 6px, 6/16 = 37.5%
+    }
+
+    /*     @include respond(small-phone){
+        font-size: 25%; //1rem = 4px, 4/16 = 25%
+    } */
+
+    @include respond(big-desktop){
+        font-size: 75%; //1rem = 12px, 12/16 = 75%
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port){ 
+        padding: 0; //remove the white border
+    }
+
+} 

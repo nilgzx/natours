@@ -1,0 +1,101 @@
+.btn {
+
+    &,
+    //these styles will only work for <a> tags
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all 0.2s ;
+        position: relative;
+        font-size: $default-font-size;
+
+        //change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2); /* x, y, blur */
+
+/*         &::after {
+            transform: scaleX(1.33) scaleY(1.5);
+            opacity: 0;
+        } */
+    }
+    
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px); /* wrt initial link state */
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+/*         &::after {
+            background-color: $color-white;
+        } */
+    }
+
+    &--green {
+        background-color: $color-primary-light;
+        color: $color-white;
+    }
+
+/*         &::after {
+            background-color: $color-primary-dark;
+        } */
+     
+/*     &::after {
+        content: "";  //required, even if empty 
+        display: inline-block;  //same as the element 
+        height: 100%; //wrt element 
+        width: 100%;  //wrt element 
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1; //puts it behind, hides it 
+    
+        transition: all 0.2s;
+    } */
+    
+    &--animated {
+        animation: moveInBottom .3s ease-out .75s;
+        animation-fill-mode: backwards; /* doesnt show the button beforethe animation */
+    }
+}
+
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary-dark;
+        display: inline-block;
+        text-decoration: none;
+        border-radius: .33rem;
+        //border-bottom: .1rem solid $color-primary;
+        padding: .3rem;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-.2rem);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(-.1rem);
+    }
+}
